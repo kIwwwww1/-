@@ -29,8 +29,8 @@ class ReadFile:
         with f:
             with open("errors_only.txt", "w", encoding="utf-8") as f1:
                 for line in f.readlines():
-                    f1.write(line)
                     one_line = line.split("|")
+                    f1.writelines(one_line[1] + one_line[2])
                     cls.all_error.append(one_line)
 
     @classmethod
